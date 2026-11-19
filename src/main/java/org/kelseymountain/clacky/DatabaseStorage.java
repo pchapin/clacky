@@ -1,10 +1,10 @@
-package edu.vtc.clacky;
+package org.kelseymountain.clacky;
 
 public class DatabaseStorage implements Storage {
 
     @Override
     public void store(Rational value, int registerNumber) {
-        // TODO Auto-generated method stub   
+        // TODO Auto-generated method stub
     }
 
     @Override

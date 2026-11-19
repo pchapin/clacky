@@ -1,24 +1,22 @@
-package edu.vtc.clacky;
+package org.kelseymountain.clacky;
 
 import java.util.Map;
 import java.util.TreeMap;
 
 public class InMemoryStorage implements Storage {
-    
-    private Map<Integer, Rational> registers = new TreeMap<Integer, Rational>(); 
+
+    private final Map<Integer, Rational> registers = new TreeMap<Integer, Rational>();
 
     @Override
-    public void store(Rational value, int registerNumber) throws StorageException
-    {
+    public void store(Rational value, int registerNumber) throws StorageException {
         if (registerNumber < 0) {
             throw new StorageException("negative register number");
         }
-        registers.put(registerNumber, value);  
+        registers.put(registerNumber, value);
     }
 
     @Override
-    public Rational recall(int registerNumber) throws StorageException
-    {
+    public Rational recall(int registerNumber) throws StorageException {
         if (registerNumber < 0) {
             throw new StorageException("negative register number");
         }
@@ -30,8 +28,7 @@ public class InMemoryStorage implements Storage {
     }
 
     @Override
-    public int registerCount()
-    {
+    public int registerCount() {
         return registers.size();
     }
 
